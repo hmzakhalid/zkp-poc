@@ -7,6 +7,7 @@
 *.witness
 *.key
 *.r1cs
+*_abi.json
 
 # Environment files
 .env
