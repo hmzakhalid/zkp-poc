@@ -1,0 +1,7 @@
+def main(private field debt, private field income, field maxRatio) -> bool {
+    return if income == 0 {
+        false
+    } else {
+        (debt / income) <= maxRatio
+    }
+}

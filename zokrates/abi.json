@@ -1,0 +1,17 @@
+{
+  "inputs": [
+    {
+      "name": "assets",
+      "public": false,
+      "type": "field"
+    },
+    {
+      "name": "accreditedThreshold",
+      "public": true,
+      "type": "field"
+    }
+  ],
+  "output": {
+    "type": "bool"
+  }
+}
