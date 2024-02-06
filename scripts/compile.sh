@@ -2,7 +2,7 @@
 echo 'Running compile'
 
 # Navigate to the ZoKrates program directory
-cd ../zokrates
+cd zokrates
 
 # List of verifications
 VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
@@ -11,7 +11,7 @@ VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
 for VERIFICATION in "${VERIFICATIONS[@]}"
 do
     echo "Compiling ${VERIFICATION}..."
-    zokrates compile -i ${VERIFICATION}/${VERIFICATION}.zok -o ${VERIFICATION}/compiled/${VERIFICATION}.out
+    zokrates compile -i ${VERIFICATION}/${VERIFICATION}.zok -o ${VERIFICATION}/compiled/${VERIFICATION}.out -r ${VERIFICATION}/compiled/${VERIFICATION}.r1cs
 done
 
 echo "Compilation completed."

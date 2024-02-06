@@ -2,7 +2,7 @@
 echo 'Running setup'
 
 # Navigate to the ZoKrates program directory
-cd financial-verification-zkp/zokrates
+cd zokrates
 
 # List of verifications
 VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")

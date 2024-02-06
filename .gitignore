@@ -1,0 +1,32 @@
+# ZoKrates compiled artifacts
+**/compiled/
+**/out/
+
+# Private data and witness files
+*.wtns
+*.witness
+*.key
+*.r1cs
+
+# Environment files
+.env
+
+# Node modules directory
+node_modules/
+
+# Truffle build directory
+build/
+
+# Hardhat cache and artifacts directories
+cache/
+artifacts/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
