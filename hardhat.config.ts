@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
+import "dotenv/config";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -21,6 +22,12 @@ const config: HardhatUserConfig = {
       chainId: 80001,
       accounts: [process.env.PRIVATE_KEY!],
     }
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
   }
 };
 
