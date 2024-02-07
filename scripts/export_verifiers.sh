@@ -17,6 +17,9 @@ do
     # Use ZoKrates to generate the Solidity verifier contract
     zokrates export-verifier -i out/verification.key -o ../../contracts/Verifier${VERIFICATION^}.sol
 
+    # Rename the contract to match the naming convention
+    sed -i "s/contract Verifier /contract Verifier${VERIFICATION^} /g" ../../contracts/Verifier${VERIFICATION^}.sol
+
     # Navigate back to the base directory
     cd ../..
 
