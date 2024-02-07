@@ -11,12 +11,12 @@ const config: HardhatUserConfig = {
       }
     }
   },
-  defaultNetwork: "polygon",
+  defaultNetwork: "mumbai",
   networks: {
     hardhat: {
       chainId: 1337,
     },
-    polygon: {
+    mumbai: {
       url: "https://rpc-mumbai.maticvigil.com",
       chainId: 80001,
       accounts: [process.env.PRIVATE_KEY!],
