@@ -1,3 +1,4 @@
-def main(private field debt, private field income, field maxRatio) -> bool {
-    return (debt / income) <= maxRatio;
+def main(private field debt, private field income, field maxRatio) {
+    assert(debt <= income * maxRatio);
+    return;
 }

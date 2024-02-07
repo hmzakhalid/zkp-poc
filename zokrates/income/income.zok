@@ -1,3 +1,4 @@
-def main(private field income, field minIncome) -> bool {
-    return income >= minIncome;
+def main(private field income, field minIncome) {
+    assert(income >= minIncome);
+    return;
 }

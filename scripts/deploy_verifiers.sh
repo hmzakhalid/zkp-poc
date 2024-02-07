@@ -1,13 +1,16 @@
 #!/bin/bash
-echo 'Running deploy_verifiers'
 
-echo "This script should deploy verifier contracts to your blockchain."
-echo "You'll need to integrate with deployment tools like Truffle or Hardhat."
-echo "Please customize this script according to your deployment process."
+# Define an array of deployment script names
+DEPLOY_SCRIPTS=("deployVerifierIncome.ts" "deployVerifierAssets.ts" "deployVerifierDebtIncomeRatio.ts" "deployVerifierAccreditedInvestor.ts")
 
-# Example placeholder command
-# truffle migrate --reset
-# or
-# hardhat run scripts/deploy.js --network <your-network>
+# Navigate to the hardhat project directory
+cd ../
 
-echo "Deployment script needs customization."
+# Loop through and execute each deployment script
+for SCRIPT in "${DEPLOY_SCRIPTS[@]}"
+do
+  echo "Deploying ${SCRIPT%.*}..."
+  npx hardhat run scripts/${SCRIPT}
+done
+
+echo "Deployment completed."

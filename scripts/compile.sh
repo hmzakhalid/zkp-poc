@@ -11,7 +11,7 @@ VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
 for VERIFICATION in "${VERIFICATIONS[@]}"
 do
     echo "Compiling ${VERIFICATION}..."
-    zokrates compile -i ${VERIFICATION}/${VERIFICATION}.zok -o ${VERIFICATION}/compiled/${VERIFICATION}.out -r ${VERIFICATION}/compiled/${VERIFICATION}.r1cs
+    zokrates compile -i ${VERIFICATION}/${VERIFICATION}.zok -o ${VERIFICATION}/compiled/${VERIFICATION}.out -r ${VERIFICATION}/compiled/${VERIFICATION}.r1cs -s ${VERIFICATION}/compiled/${VERIFICATION}_abi.json
 done
 
 echo "Compilation completed."

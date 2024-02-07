@@ -1,3 +1,4 @@
-def main(private field assets, field minAssets) -> bool {
-    return assets >= minAssets;
+def main(private field assets, field minAssets) {
+    assert(assets >= minAssets);
+    return;
 }

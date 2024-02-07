@@ -1,3 +1,4 @@
-def main(private field assets, field accreditedThreshold) -> bool {
-    return assets >= accreditedThreshold;
+def main(private field assets, field accreditedThreshold) {
+    assert(assets >= accreditedThreshold);
+    return;
 }
