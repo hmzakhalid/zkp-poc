@@ -158,13 +158,12 @@ contract VerifierAccreditedInvestor {
         Pairing.G1Point c;
     }
     function verifyingKey() pure internal returns (VerifyingKey memory vk) {
-        vk.alpha = Pairing.G1Point(uint256(0x137b1fa50d1b685b9ec2e72f669f4acdcb636d2603dbbd66eeca7a49bda1f805), uint256(0x1e8d796188f2145f160c92b196bd17913cee563ccae8dfbbf4ae5d8769d84293));
-        vk.beta = Pairing.G2Point([uint256(0x1714e3b194bc7b14301c36bcf5f86ee674faa05691f2c106766f6672a3c0e23b), uint256(0x01d919857fc47bae22048cb1334c0e71d6d31be24edd68b5a0309a0663c0f7c9)], [uint256(0x2ba21c6aef62c6cf7f3656491466705b4d3e9e0a6342f0256990c6f0358eb486), uint256(0x053c2e3451718a6aee58cef548df5c8de20f0de8c19d58494b27e65a75ce1e34)]);
-        vk.gamma = Pairing.G2Point([uint256(0x1240308d866f6621a86de2fac5e5107bdcac3a7f8a70a5820e4464f666f110ec), uint256(0x27711d06a7ec595e735a728569cbcd1328ea06cc9e64b82ab096cc4c1c5fe091)], [uint256(0x103912afe2ee66e70562d4e48a386b7939b2fcf19bc93018ad3c22c642a15b89), uint256(0x161a0e0ec4461ff36dabde8502712e5055d746bb3e8bf25895ec0e2bcd312db2)]);
-        vk.delta = Pairing.G2Point([uint256(0x2bb76f01a7c23e3b50572ccaa6d6379b7c72e1ad86801836ed26e3904122a7d1), uint256(0x133e81e2839cca8bbff9ec9092202aca69f05e828cf42c7b5e48bf9e8e6fecc4)], [uint256(0x1ef7d89e7ab4e1190d1c648f4aa79efad4652daadf72ae2056faa998281cfd3d), uint256(0x0023a6eff0d40fe68fd68e2b48883ba2b8fd29221a353a28d92949034acf45c7)]);
-        vk.gamma_abc = new Pairing.G1Point[](2);
-        vk.gamma_abc[0] = Pairing.G1Point(uint256(0x2d44cdb642dac364cf5e85bcf164f5022c31057621f072def7ee67d2f4d626f4), uint256(0x0f891940fa64ff2df30cd444e17dd34cb002385c2e915b4f0be74c1ec38d0fcd));
-        vk.gamma_abc[1] = Pairing.G1Point(uint256(0x077ec1ae874490a2c3853dcdc37bc929abd4836586ef184d8a13d1fe6e62f3f7), uint256(0x298f4ff6c917972a3800e041b0209f4f02b02fee5d8968d13daef898465dfacf));
+        vk.alpha = Pairing.G1Point(uint256(0x0c4a6d412ecf8a89d18098b8d7248474674e242d123e5b2b1cfafcfb2d4e694c), uint256(0x0fe20bdcab3f87d9d8778e8c741f829a8838663d928849e9c18756c004f95410));
+        vk.beta = Pairing.G2Point([uint256(0x305457daff00e0ee6099ae371cb131821abbb8091760f6fc5084d400442d7299), uint256(0x08f8b46695ab3c77e14bcb76513363ceb94b60cba28c0fdec31fbde1de0b5e0a)], [uint256(0x0503e1a1df6b351e614ec07551d97ed065807dbcb0c254d3918e8ef5351cb2ad), uint256(0x1d3932a6e6a29a452fb0df8fee3ba5f2928f1c41337f079c067fd98523944b8d)]);
+        vk.gamma = Pairing.G2Point([uint256(0x30554765a00c25ae055d3553f76813f6e9f72de1530c06af78c42a7025560403), uint256(0x130e0dc82528dd7531247629c5100baed116bda48a145fb9e4971a7532d23039)], [uint256(0x05e91b78e6228caa6405ea462100a5b11d71be78557f26829e7996095c5d4ecb), uint256(0x086ebd8990f7148b56ca5ba44b361cabadc03a43dc1ae0ee7da8593e00637ede)]);
+        vk.delta = Pairing.G2Point([uint256(0x10692d1a0e5e2ff22693c2866ebad66d46b66d124dd3be2b408ea206ca7e26be), uint256(0x233d6e368e234135e7a68183fa15ca46f14f3f3d29a1ca11627e9c4fb9b4ce5e)], [uint256(0x1fde712adcc0510c6073aa7211a8555d1246ca1f3de4ba8c072285c2c8ede2d6), uint256(0x025f4f8f78d70a7f85014b0ed0c4a61c68d350611809ba02743d3be871d3244c)]);
+        vk.gamma_abc = new Pairing.G1Point[](1);
+        vk.gamma_abc[0] = Pairing.G1Point(uint256(0x24b02ad2b0e8eebdda77318b77d2654e2c2febd9a2786da21a30355677174c03), uint256(0x00f2612ec58382c5573d90f941630fa12325369bf9a804125bee38a002c20635));
     }
     function verify(uint[] memory input, Proof memory proof) internal view returns (uint) {
         uint256 snark_scalar_field = 21888242871839275222246405745257275088548364400416034343698204186575808495617;
@@ -185,13 +184,10 @@ contract VerifierAccreditedInvestor {
         return 0;
     }
     function verifyTx(
-            Proof memory proof, uint[1] memory input
+            Proof memory proof
         ) public view returns (bool r) {
-        uint[] memory inputValues = new uint[](1);
+        uint[] memory inputValues = new uint[](0);
         
-        for(uint i = 0; i < input.length; i++){
-            inputValues[i] = input[i];
-        }
         if (verify(inputValues, proof) == 0) {
             return true;
         } else {

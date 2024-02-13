@@ -5,7 +5,7 @@ echo 'Running setup'
 cd zokrates
 
 # List of verifications
-VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
+VERIFICATIONS=("accreditedInvestor")
 
 # Perform the setup
 for VERIFICATION in "${VERIFICATIONS[@]}"
@@ -13,5 +13,3 @@ do
     echo "Performing setup for ${VERIFICATION}..."
     zokrates setup -i ${VERIFICATION}/compiled/${VERIFICATION}.out -p ${VERIFICATION}/out/proving.key -v ${VERIFICATION}/out/verification.key
 done
-
-echo "Setup completed."

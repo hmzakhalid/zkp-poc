@@ -4,7 +4,7 @@
 BASE_DIR="zokrates"
 
 # Define verification types for which to export verifiers
-VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
+VERIFICATIONS=("accreditedInvestor")
 
 # Loop through each verification type
 for VERIFICATION in "${VERIFICATIONS[@]}"

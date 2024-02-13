@@ -1,5 +1,5 @@
 {
-  "address": "0x49607d66f2a426871aa2f6369af03a18b7272373",
+  "address": "0xd85e84df022c1df67e00232b8bbe1639aaee996e",
   "abi": [
     {
       "inputs": [
@@ -57,14 +57,9 @@
               "type": "tuple"
             }
           ],
-          "internalType": "struct VerifierIncome.Proof",
+          "internalType": "struct VerifierAccreditedInvestor.Proof",
           "name": "proof",
           "type": "tuple"
-        },
-        {
-          "internalType": "uint256[1]",
-          "name": "input",
-          "type": "uint256[1]"
         }
       ],
       "name": "verifyTx",

@@ -12,4 +12,7 @@ This project demonstrates financial verifications using Zero-Knowledge Proofs wi
 
 Follow the instructions below to set up and run the POC.
 
- - TBA
+ - Compile ZoKrates programs
+ - Setup the Keys
+ - 
+

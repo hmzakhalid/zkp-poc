@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define an array of deployment script names
-DEPLOY_SCRIPTS=("deployVerifierIncome.ts" "deployVerifierAssets.ts" "deployVerifierDebtIncomeRatio.ts" "deployVerifierAccreditedInvestor.ts")
+DEPLOY_SCRIPTS=("deployVerifierAccreditedInvestor.ts")
 
 # Navigate to the hardhat project directory
 cd ../

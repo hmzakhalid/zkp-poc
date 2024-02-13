@@ -5,7 +5,7 @@ echo 'Running compile'
 cd zokrates
 
 # List of verifications
-VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
+VERIFICATIONS=("accreditedInvestor")
 
 # Compile each ZoKrates program
 for VERIFICATION in "${VERIFICATIONS[@]}"

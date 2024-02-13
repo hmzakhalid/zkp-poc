@@ -5,7 +5,7 @@ echo 'Running generate_proof'
 cd zokrates
 
 # List of verifications
-VERIFICATIONS=("income" "assets" "debtIncomeRatio" "accreditedInvestor")
+VERIFICATIONS=("accreditedInvestor")
 
 # Generate proof for each verification
 for VERIFICATION in "${VERIFICATIONS[@]}"

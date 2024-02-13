@@ -1,4 +1,0 @@
-def main(private field assets, field minAssets) {
-    assert(assets >= minAssets);
-    return;
-}
