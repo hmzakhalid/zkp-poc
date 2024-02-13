@@ -2,7 +2,8 @@
 echo 'Running generate_proof'
 
 # Navigate to the ZoKrates program directory
-cd zokrates
+SCRIPT_DIR=$(dirname "$0")
+cd "${SCRIPT_DIR}/../zokrates"
 
 # List of verifications
 VERIFICATIONS=("accreditedInvestor")

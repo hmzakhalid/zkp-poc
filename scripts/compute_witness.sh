@@ -15,7 +15,8 @@ shift
 INPUTS=("$@")
 
 # Navigate to the ZoKrates program directory for the given verification type
-cd zokrates/${VERIFICATION_TYPE}
+SCRIPT_DIR=$(dirname "$0")
+cd "${SCRIPT_DIR}/../zokrates/${VERIFICATION_TYPE}"
 
 # Prepare the inputs for the compute-witness command
 INPUT_ARGS=""
@@ -26,5 +27,3 @@ done
 # Compute the witness using the provided inputs
 echo "Computing witness for ${VERIFICATION_TYPE} verification with inputs: ${INPUTS[*]}..."
 zokrates compute-witness -i compiled/${VERIFICATION_TYPE}.out ${INPUT_ARGS} -o out/${VERIFICATION_TYPE}.witness --circom-witness out/${VERIFICATION_TYPE}.wtns -s out/${VERIFICATION_TYPE}_abi.json
-
-echo "Witness computation completed for ${VERIFICATION_TYPE}."
