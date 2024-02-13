@@ -19,5 +19,3 @@ Follow the instructions below to set up and run the POC.
  - Compute a Witness `scripts/compute_witness.sh accreditedInvestor <income> <netWorth>`
  - Generate a Proof `scripts/generate_proof.sh`
  - Verify the Proof `npx hardhat run scripts/verifyAccreditedInvestorProof.ts`
- - 
-
